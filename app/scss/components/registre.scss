@@ -1,0 +1,91 @@
+@use "../util" as *;
+
+.registre {
+  padding-top: 3rem;
+  &_text {
+    text-align: center;
+    margin: 0 rem(352);
+    @include breakpoint-down(medium) {
+      margin: 0 rem(176);
+    }
+    @include breakpoint-down(xsmall) {
+      margin: 0 rem(80);
+    }
+    @include breakpoint-down(small) {
+      margin: 0 rem(30);
+    }
+    h3 {
+      font-family: var(--font-stat);
+      font-size: rem(48);
+    }
+    p {
+      @include breakpoint-down(small) {
+        font-size: rem(12);
+      }
+    }
+  }
+
+  &_blocs {
+    margin: rem(16) 0;
+    &__contents {
+      input {
+        display: none;
+      }
+    }
+    &__elts {
+      display: flex;
+      justify-content: space-evenly;
+      label {
+        &:hover {
+          border: solid rem(0) var(--white);
+          border-radius: rem(16);
+          background-color: var(--pink);
+        }
+        h4 {
+          color: var(--black);
+          text-align: center;
+          margin: 0;
+          padding: rem(8) rem(15);
+          cursor: pointer;
+          @include breakpoint-down(extrasmall) {
+            font-size: rem(12);
+          }
+        }
+      }
+    }
+    &__list {
+      .elts {
+        display: none;
+        margin-top: rem(15);
+        &-imgs {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          @include breakpoint-down(small) {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        &-img {
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  #other:checked ~ .registre_blocs__list .other,
+  #clothes:checked ~ .registre_blocs__list .clothes,
+  #cuisine:checked ~ .registre_blocs__list .cuisine {
+    display: block;
+  }
+
+  #other:checked ~ .registre_blocs__list .cuisine,
+  #clothes:checked ~ .pregistre_blocs__list .cuisine {
+    display: none;
+  }
+}
+.registre_copy {
+    text-align: center;
+    font-size: rem(15);
+    font-weight: 400;
+  }
