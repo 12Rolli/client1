@@ -50,20 +50,47 @@
           width: 100%;
         }
       }
+      .const {
+        &-img {
+          position: relative;
+          &--1,
+          &--2,
+          &--3,
+          &--4,
+          &--5,
+          &--6 {
+            color: var(--white);
+            position: absolute;
+            top: 75%;
+            right: 3%;
+          }
+          &-1,
+          &-2,
+          &-3,
+          &-4,
+          &-5,
+          &-6 {
+            color: var(--white);
+            position: absolute;
+            top: 80%;
+            right: 3%;
+          }
+        }
+      }
       .const1 {
-        animation: slide 16.5s infinite;
+        animation: slide 19s infinite;
       }
       .const2 {
-        animation: slide 16s infinite;
+        animation: slide 18s infinite;
       }
       .const3 {
-        animation: slide 15.5s infinite;
+        animation: slide 17s infinite;
       }
       .const4 {
-        animation: slide 15s infinite;
+        animation: slide 16s infinite;
       }
       .const5 {
-        animation: slide 14.5s infinite;
+        animation: slide 15s infinite;
       }
       .const6 {
         animation: slide 14s infinite;

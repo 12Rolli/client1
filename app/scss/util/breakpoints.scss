@@ -1,34 +1,36 @@
 // 425px, 640px,1030px, 1150px, 1400px
 $breakpoints-up: (
-	'small': '26.563em',
-	'medium': '40em',
-	'xmedium': '48.75em',
-	'xxsmall': '50em',
-	'xtablet': '59.375em',
-	'xxlarge': '70em',
-	'xlarge': '87.5em',
-	'extralarge': '160em',
+  "small": "26.563em",
+  "medium": "40em",
+  "xmedium": "48.75em",
+  "xxsmall": "50em",
+  "xtablet": "59.375em",
+  "xxlarge": "70em",
+  "xlarge": "87.5em",
+  "extralarge": "160em",
 );
 
-//425px,500px, 639px, 800px,950px, 1149px, 1399px
+//425px,500px, 639px, 800px,950px, 1149px, 1399px,1440px
 $breakpoints-down: (
-	'extrasmall': '26.563em',
-	'mobile':'31.25em',
-	'small': '39.9375em',
-	'xsmall': '50em',
-	'tablet':'59.375em',
-	'medium': '71.8125em',
-	'large': '87.4375em',
+  "extrasmall": "26.563em",
+  "mobile": "31.25em",
+  "small": "39.9375em",
+  "xsmall": "50em",
+  "tablet": "59.375em",
+  "medium": "71.8125em",
+  "large": "87.4375em",
+  "xxlarge": "120em",
+  "xlarge": "160em",
 );
 
 @mixin breakpoint($size) {
-	@media (min-width: map-get($breakpoints-up, $size)) {
-		@content;
-	}
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
 }
 
 @mixin breakpoint-down($size) {
-	@media (max-width: map-get($breakpoints-down, $size)) {
-		@content;
-	}
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
 }
