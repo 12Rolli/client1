@@ -1,248 +1,47 @@
-@use '../util' as *;
+@use "../util" as *;
 
 .histoire {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: rem(28);
-    padding-top: 3rem;
-    @include breakpoint-down(xsmall) {
-      display: block;
-    }
-
-    &_book__content {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 65%;
-        min-width: rem(250);
-        max-width: rem(400);
-        height: rem(480);
-        position: relative;
-        perspective: rem(10000);
-        transition: 1s;
-        @include breakpoint-down(xsmall) {
-            perspective: rem(1000);
-            max-width: rem(704);
-            width: 100%;
-            height: rem(640);
-            display: none;
-        }
-        .book {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            transition: 1s;
-            transform-style: preserve-3d;
-            transform-origin: left;
-            @include breakpoint-down(xsmall) {
-                width: 95%;
-                transform-origin: bottom;
-            }
-            .face-front,
-            .face-back {
-                display: grid;
-                width: 100%;
-                height: 100%;
-                padding: rem(32);
-                box-sizing: border-box;
-                overflow: hidden;
-                cursor: pointer;
-                background-color: var(--white);
-                h1 {
-                    text-align: center;
-                    align-self: center;
-                    @include breakpoint-down(xsmall) {
-                        font-size: rem(13);
-                    }
-                }
-                .page {
-                    gap: rem(10);
-                    height: min-content;
-                    .img {
-                        @include breakpoint-down(xsmall) {
-                            width: 50%;
-                            height: 50%;
-                        }
-                        img {
-                            @include breakpoint-down(xsmall) {
-                                width: 100%;
-                            }
-                        }
-                    }
-                }
-                p {
-                    margin: 0;
-                    line-height: rem(16);
-                    font-size: rem(11);
-                    height: min-content;
-                    text-align: justify;
-                    @include breakpoint-down(xsmall) {
-                        font-size: rem(12);
-                    }
-                }
-                @include breakpoint-down(xsmall) {
-                    padding: rem(16) rem(35);
-                }
-            }
-            .face-front {
-                box-shadow: inset rem(3) 0 rem(20) rem(-7) var(--black);
-                border-top-right-radius: rem(3);
-                border-bottom-right-radius: rem(3);
-                // background-color: var(--grayLight);
-                .btn-next {
-                    justify-self: end;
-                    align-self: end;
-                    cursor: default;
-                    @include breakpoint-down(xsmall) {
-                        justify-content: center;
-                        align-items: center;
-                    }
-                }
-            }
-            .face-back {
-                // background-color: var(--grayDark);
-                position: absolute;
-                top: 0;
-                left: 0;
-                box-shadow: inset rem(3) 0 rem(20) rem(-7) var(--black);
-                transform: translateZ(-1px) rotateY(180deg);
-                border-top-left-radius: rem(3);
-                border-bottom-left-radius: rem(3);
-                .btn-next {
-                    display: none;
-                    @include breakpoint-down(xsmall) {
-                        display: block;
-                        align-self: end;
-                        justify-self: end;
-                    }
-                }
-                .btn-back {
-                    cursor: default;
-                    align-self: end;
-                    justify-self: start;
-                    @include breakpoint-down(xsmall) {
-                        display: none;
-                    }
-                }
-            }
-            #portada {
-                background-image: url('https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738091/mariage%20client%201/sans%20image/couverture.png');
-            }
-            #portada-back {
-                background-image: url('https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738852/mariage%20client%201/sans%20image/fin.png');
-            }
-            #portada,
-            #portada-back {
-                background-position: center;
-                background-repeat: no-repeat;
-                margin: 0;
-                padding: 0;
-                @include breakpoint-down(xsmall) {
-                    background-size: cover;
-                }
-            }
-        }
-    }
-    h3 {
-        font-weight: 300;
-        font-size: rem(14);
-        line-height: rem(17);
-        letter-spacing: 0.37rem;
-        @include breakpoint-down(xsmall) {
-            letter-spacing: rem(2);
-            text-align: center;
-        }
-        @include breakpoint-down(extrasmall) {
-            letter-spacing: rem(0);
-        }
-    }
-}
-.sliders {
-    margin-left: rem(1000);
-}
-.reset {
-}
-.trnsf-reset {
-    transform: translateX(0);
-}
-.trnsf {
-    transform: translateX(rem(194));
-    @include breakpoint-down(medium) {
-        transform: translateX(rem(198));
-    }
-    @include breakpoint-down(xsmall) {
-        transform: translateX(0);
-    }
-}
-
-
-.story {
-    display: none;
-
-    @include breakpoint-down(xsmall) {
-        display: block;
-    }
-
-    /* Book */
-    &__container {
-        position: relative;
-        width: 100%;
-        height: 100vh;
-        transition: transform 0.5s;
-        @include breakpoint-down(mobile){
-          height: 80vh;
-        }
-    }
-
-    &__paper {
-        position: absolute;
-        width: 100%;
-        height: 100vh;
-        top: 0;
-        left: 0;
-        perspective: rem(1500);
-        /* transform: rotateY(-180deg); */
-        @include breakpoint-down(mobile){
-          height: 80vh;
-        }
-    }
-
-    &__front {
-        background-color: white;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        /* transform-origin: left; */
-        transition: transform 0.5s;
-        z-index: 1;
-        backface-visibility: hidden;
-    }
-    &__frontimage {
-        background-image: url('https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738091/mariage%20client%201/sans%20image/couverture.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-    #f8 {
-        background-image: url('https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738852/mariage%20client%201/sans%20image/fin.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-    }
-
-    .front-content {
-        /* width: 100%;
-  height: 100%;
+  position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center; */
-        box-shadow: inset 3px 0 20px -7px #000;
-        border-top-right-radius: rem(3);
-        border-bottom-right-radius: rem(3);
+  flex-direction: column;
+  align-items: center;
+  gap: rem(28);
+  padding-top: 3rem;
+  @include breakpoint-down(xsmall) {
+    display: block;
+  }
+
+  &_book__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+    min-width: rem(250);
+    max-width: rem(400);
+    height: rem(480);
+    position: relative;
+    perspective: rem(10000);
+    transition: 1s;
+    @include breakpoint-down(xsmall) {
+      perspective: rem(1000);
+      max-width: rem(704);
+      width: 100%;
+      height: rem(640);
+      display: none;
+    }
+    .book {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      transition: 1s;
+      transform-style: preserve-3d;
+      transform-origin: left;
+      @include breakpoint-down(xsmall) {
+        width: 95%;
+        transform-origin: bottom;
+      }
+      .face-front,
+      .face-back {
         display: grid;
         width: 100%;
         height: 100%;
@@ -250,97 +49,307 @@
         box-sizing: border-box;
         overflow: hidden;
         cursor: pointer;
-        background-color: #fff;
-    }
-    .front-content h1 {
-        text-align: center;
-        align-self: center;
-        font-size: 1.5rem;
-    }
-    .front-content p {
-        margin: 0;
-        line-height: rem(16);
-        height: min-content;
-        text-align: justify;
-        font-size: rem(13);
-    }
-    .grid_2__cols {
-        display: grid;
-        grid-template-columns: 1fr;
-    }
-    .page {
-        gap: rem(10);
-        height: min-content;
-    }
-    .page .img {
-        width: 50%;
-        height: 50%;
-        justify-self: center;
-    }
-
-    .page img {
-        width: 100%;
-    }
-
-    /* Paper flip effect */
-    .flipped .story__front {
-        transform: rotateY(-180deg);
-    }
-
-    /* Controller Buttons */
-    &__container button {
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-        transition: transform 0.5s;
+        background-color: var(--white);
+        h1 {
+          text-align: center;
+          align-self: center;
+          @include breakpoint-down(xsmall) {
+            font-size: rem(13);
+          }
+        }
+        .page {
+          gap: rem(10);
+          height: min-content;
+          .img {
+            @include breakpoint-down(xsmall) {
+              width: 50%;
+              height: 50%;
+            }
+            img {
+              @include breakpoint-down(xsmall) {
+                width: 100%;
+              }
+            }
+          }
+        }
+        p {
+          margin: 0;
+          line-height: rem(16);
+          font-size: rem(11);
+          height: min-content;
+          text-align: justify;
+          @include breakpoint-down(xsmall) {
+            font-size: rem(12);
+          }
+        }
+        @include breakpoint-down(xsmall) {
+          padding: rem(16) rem(35);
+        }
+      }
+      .face-front {
+        box-shadow: inset rem(3) 0 rem(20) rem(-7) var(--black);
+        border-top-right-radius: rem(3);
+        border-bottom-right-radius: rem(3);
+        // background-color: var(--grayLight);
+        .btn-next {
+          justify-self: end;
+          align-self: end;
+          cursor: default;
+          @include breakpoint-down(xsmall) {
+            justify-content: center;
+            align-items: center;
+          }
+        }
+      }
+      .face-back {
+        // background-color: var(--grayDark);
         position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        z-index: 10;
-        font-size: 1.5rem;
-    }
-    &__container button:focus {
-        outline: none;
-    }
-    &__container button:hover ion-icon {
-        color: #f07667;
-    }
-    #story__next-btn {
-        right: 0;
-    }
-    #story__prev-btn {
+        top: 0;
         left: 0;
+        box-shadow: inset rem(3) 0 rem(20) rem(-7) var(--black);
+        transform: translateZ(-1px) rotateY(180deg);
+        border-top-left-radius: rem(3);
+        border-bottom-left-radius: rem(3);
+        .btn-next {
+          display: none;
+          @include breakpoint-down(xsmall) {
+            display: block;
+            align-self: end;
+            justify-self: end;
+          }
+        }
+        .btn-back {
+          cursor: default;
+          align-self: end;
+          justify-self: start;
+          @include breakpoint-down(xsmall) {
+            display: none;
+          }
+        }
+      }
+      #portada {
+        background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738091/mariage%20client%201/sans%20image/couverture.png");
+      }
+      #portada-back {
+        background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738852/mariage%20client%201/sans%20image/fin.png");
+      }
+      #portada,
+      #portada-back {
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        @include breakpoint-down(xsmall) {
+          background-size: cover;
+        }
+      }
     }
+  }
+  h3 {
+    font-weight: 300;
+    font-size: rem(14);
+    line-height: rem(17);
+    letter-spacing: 0.37rem;
+    @include breakpoint-down(xsmall) {
+      letter-spacing: rem(2);
+      text-align: center;
+    }
+    @include breakpoint-down(extrasmall) {
+      letter-spacing: rem(0);
+    }
+  }
+}
+.sliders {
+  margin-left: rem(1000);
+}
+.reset {
+  transform: translateX(rem(388));
+  @include breakpoint-down(medium) {
+    transform: translateX(rem(396));
+  }
+  @include breakpoint-down(xsmall) {
+    transform: translateX(0);
+  }
+  &-trnsf {
+    transform: translateX(rem(194));
+  }
+}
+.trnsf {
+  transform: translateX(rem(194));
+  @include breakpoint-down(medium) {
+    transform: translateX(rem(198));
+  }
+  @include breakpoint-down(xsmall) {
+    transform: translateX(0);
+  }
+  &-reset {
+    transform: translateX(0);
+  }
+}
 
-    /* Paper stack order */
-    #paper1 {
-        z-index: 8;
-    }
+.story {
+  display: none;
 
-    #paper2 {
-        z-index: 7;
-    }
+  @include breakpoint-down(xsmall) {
+    display: block;
+  }
 
-    #paper3 {
-        z-index: 6;
+  /* Book */
+  &__container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    transition: transform 0.5s;
+    @include breakpoint-down(mobile) {
+      height: 80vh;
     }
+  }
 
-    #paper4 {
-        z-index: 5;
+  &__paper {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    perspective: rem(1500);
+    /* transform: rotateY(-180deg); */
+    @include breakpoint-down(mobile) {
+      height: 80vh;
     }
-    #paper5 {
-        z-index: 4;
-    }
+  }
 
-    #paper6 {
-        z-index: 3;
-    }
+  &__front {
+    background-color: white;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    /* transform-origin: left; */
+    transition: transform 0.5s;
+    z-index: 1;
+    backface-visibility: hidden;
+  }
+  &__frontimage {
+    background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738091/mariage%20client%201/sans%20image/couverture.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  #f8 {
+    background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738852/mariage%20client%201/sans%20image/fin.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
 
-    #paper7 {
-        z-index: 2;
-    }
+  .front-content {
+    /* width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
+    box-shadow: inset 3px 0 20px -7px #000;
+    border-top-right-radius: rem(3);
+    border-bottom-right-radius: rem(3);
+    display: grid;
+    width: 100%;
+    height: 100%;
+    padding: rem(32);
+    box-sizing: border-box;
+    overflow: hidden;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  .front-content h1 {
+    text-align: center;
+    align-self: center;
+    font-size: 1.5rem;
+  }
+  .front-content p {
+    margin: 0;
+    line-height: rem(16);
+    height: min-content;
+    text-align: justify;
+    font-size: rem(13);
+  }
+  .grid_2__cols {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .page {
+    gap: rem(10);
+    height: min-content;
+  }
+  .page .img {
+    width: 50%;
+    height: 50%;
+    justify-self: center;
+  }
 
-    #paper8 {
-        z-index: 1;
-    }
+  .page img {
+    width: 100%;
+  }
+
+  /* Paper flip effect */
+  .flipped .story__front {
+    transform: rotateY(-180deg);
+  }
+
+  /* Controller Buttons */
+  &__container button {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: transform 0.5s;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 1.5rem;
+  }
+  &__container button:focus {
+    outline: none;
+  }
+  &__container button:hover ion-icon {
+    color: #f07667;
+  }
+  #story__next-btn {
+    right: 0;
+  }
+  #story__prev-btn {
+    left: 0;
+  }
+
+  /* Paper stack order */
+  #paper1 {
+    z-index: 8;
+  }
+
+  #paper2 {
+    z-index: 7;
+  }
+
+  #paper3 {
+    z-index: 6;
+  }
+
+  #paper4 {
+    z-index: 5;
+  }
+  #paper5 {
+    z-index: 4;
+  }
+
+  #paper6 {
+    z-index: 3;
+  }
+
+  #paper7 {
+    z-index: 2;
+  }
+
+  #paper8 {
+    z-index: 1;
+  }
 }

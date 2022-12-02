@@ -2,6 +2,16 @@
 
 .registre {
   padding-top: 3rem;
+  @include breakpoint-down(extrasmall) {
+    padding-top: rem(680);
+  }
+  @include breakpoint-down(small) {
+    padding-top: rem(820);
+  }
+  @include breakpoint-down(mobile) {
+    padding-top: rem(730);
+  }
+
   &_text {
     text-align: center;
     margin: 0 rem(352);
