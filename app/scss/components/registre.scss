@@ -90,11 +90,9 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          // font-size: rem(23);
           color: var(--pink);
           background-color: var(--white);
-          // padding: rem(4) rem(15);
-          // border-radius: rem(4);
+          border-radius: rem(4);
           opacity: 0;
           transition: all 0.7s ease-in-out;
         }
