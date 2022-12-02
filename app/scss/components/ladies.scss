@@ -34,13 +34,12 @@
     .cont6 {
       @include breakpoint-down(small) {
         margin-top: rem(32);
-
       }
     }
     &__container {
       height: 50%;
       overflow: hidden;
-      @include breakpoint-down(small){
+      @include breakpoint-down(small) {
         height: 80vw;
       }
       .img-container {
@@ -61,6 +60,7 @@
           &--5,
           &--6 {
             color: var(--white);
+            text-shadow: rem(1) rem(1) rem(4) var(--pink);
             position: absolute;
             top: 75%;
             right: 3%;
@@ -72,6 +72,7 @@
           &-5,
           &-6 {
             color: var(--white);
+            text-shadow: rem(1) rem(1) rem(4) var(--pink);
             position: absolute;
             top: 80%;
             right: 3%;
@@ -79,22 +80,22 @@
         }
       }
       .const1 {
-        animation: slide 19s infinite;
-      }
-      .const2 {
-        animation: slide 18s infinite;
-      }
-      .const3 {
-        animation: slide 17s infinite;
-      }
-      .const4 {
-        animation: slide 16s infinite;
-      }
-      .const5 {
         animation: slide 15s infinite;
       }
-      .const6 {
+      .const2 {
         animation: slide 14s infinite;
+      }
+      .const3 {
+        animation: slide 13s infinite;
+      }
+      .const4 {
+        animation: slide 12s infinite;
+      }
+      .const5 {
+        animation: slide 11s infinite;
+      }
+      .const6 {
+        animation: slide 10s infinite;
       }
     }
   }

@@ -128,10 +128,10 @@
         }
       }
       #portada {
-        background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738091/mariage%20client%201/sans%20image/couverture.png");
+        background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669973231/mariage%20client%201/sans%20image/couverture.png");
       }
       #portada-back {
-        background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738852/mariage%20client%201/sans%20image/fin.png");
+        background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669973524/mariage%20client%201/sans%20image/fin.png");
       }
       #portada,
       #portada-back {
@@ -231,16 +231,26 @@
     backface-visibility: hidden;
   }
   &__frontimage {
-    background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738091/mariage%20client%201/sans%20image/couverture.png");
+    background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669973231/mariage%20client%201/sans%20image/couverture.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    @include breakpoint-down(small) {
+      background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669976322/mariage%20client%201/sans%20image/phonecouverture.png");
+      background-position: initial;
+      // background-size: contain;
+    }
   }
   #f8 {
-    background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669738852/mariage%20client%201/sans%20image/fin.png");
+    background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669973524/mariage%20client%201/sans%20image/fin.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    @include breakpoint-down(small) {
+      // background-size: contain;
+      background-image: url("https://res.cloudinary.com/digital-x-sarl/image/upload/v1669976322/mariage%20client%201/sans%20image/phonefin.png");
+      background-position: initial;
+    }
   }
 
   .front-content {
