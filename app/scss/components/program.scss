@@ -89,7 +89,7 @@
             }
 
             .navigation .manualbtn.active {
-                background: #f07667;
+                background: var(--pink);
                 box-shadow: 0 0 rem(2) rgba(0, 0, 0, 0.5);
             }
         }
@@ -120,7 +120,7 @@
             cursor: pointer;
         }
         ::-webkit-scrollbar-thumb {
-            background-color: #f07667;
+            background-color: var(--pink);
             border-radius: 0.5rem;
             cursor: pointer;
         }
@@ -199,8 +199,8 @@
     font-weight: 400;
     font-size: rem(48);
     text-align: center;
-    color: var(--black);
+    color: var(--pink);
 }
 .color--pink{
-  color: #f07667;
+  color: var(--pink);
 }

@@ -11,3 +11,7 @@
     grid-template-columns: 1fr;
   }
 }
+.grid_6__cols {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}

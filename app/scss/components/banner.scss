@@ -184,6 +184,12 @@
                 //transition: opacity 15s;
             }
         }
+        @include breakpoint-down(tablet){
+          background: url(https://res.cloudinary.com/digital-x-sarl/image/upload/v1670254865/mariage%20client%201/banner/bannerbacktablet.png);
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
 
         @include breakpoint-down(small) {
             background: url(https://res.cloudinary.com/digital-x-sarl/image/upload/v1669986329/mariage%20client%201/banner/bannerbackmobile.png);

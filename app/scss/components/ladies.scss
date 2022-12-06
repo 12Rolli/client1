@@ -2,17 +2,6 @@
 
 .ladies {
   padding-top: 3rem;
-  height: rem(640);
-  @include breakpoint-down(medium) {
-    height: rem(520);
-  }
-  @include breakpoint-down(xsmall) {
-    height: rem(380);
-  }
-  @include breakpoint-down(mobile) {
-    height: rem(112);
-  }
-
   &_text {
     text-align: center;
     margin-bottom: rem(16);
@@ -21,96 +10,76 @@
       font-size: rem(48);
     }
   }
-  &_grid {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    justify-content: center;
-    gap: rem(10);
-    @include breakpoint-down(small) {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .cont4,
-    .cont5,
-    .cont6 {
-      @include breakpoint-down(small) {
-        margin-top: rem(32);
+  &_blocs {
+    &__contents {
+      input {
+        display: none;
       }
     }
-    &__container {
-      height: 50%;
-      overflow: hidden;
-      @include breakpoint-down(small) {
-        height: 80vw;
-      }
-      .img-container {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        img {
-          width: 100%;
+    &__elts {
+      display: flex;
+      justify-content: space-evenly;
+      label {
+        &:hover {
+          border: solid rem(0) var(--white);
+          border-radius: rem(16);
+          background-color: var(--brown);
+        }
+        h4 {
+          color: var(--black);
+          text-align: center;
+          margin: 0;
+          padding: rem(8) rem(15);
+          cursor: pointer;
+          @include breakpoint-down(extrasmall) {
+            font-size: rem(12);
+          }
         }
       }
-      .const {
+    }
+    &__list {
+      .elts {
+        display: none;
+        margin-top: rem(15);
+        .blocs-2 {
+          @include breakpoint-down(tablet) {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          @include breakpoint-down(small) {
+            grid-template-columns: repeat(1, 1fr);
+          }
+        }
+        &-imgs {
+          gap: rem(10);
+          @include breakpoint-down(tablet) {
+            grid-template-columns: repeat(3, 1fr);
+          }
+        }
         &-img {
           position: relative;
-          &--1,
-          &--2,
-          &--3,
-          &--4,
-          &--5,
-          &--6 {
-            color: var(--white);
-            text-shadow: rem(1) rem(1) rem(4) var(--pink);
-            position: absolute;
-            top: 75%;
-            right: 3%;
-          }
-          &-1,
-          &-2,
-          &-3,
-          &-4,
-          &-5,
-          &-6 {
-            color: var(--white);
-            text-shadow: rem(1) rem(1) rem(4) var(--pink);
-            position: absolute;
-            top: 80%;
-            right: 3%;
+          img {
+            width: 100%;
           }
         }
-      }
-      .const1 {
-        animation: slide 15s infinite;
-      }
-      .const2 {
-        animation: slide 14s infinite;
-      }
-      .const3 {
-        animation: slide 13s infinite;
-      }
-      .const4 {
-        animation: slide 12s infinite;
-      }
-      .const5 {
-        animation: slide 11s infinite;
-      }
-      .const6 {
-        animation: slide 10s infinite;
+        &-desc {
+          position: absolute;
+          top: 90%;
+          right: 5%;
+          color: var(--white);
+          text-shadow: rem(1) rem(1) rem(4) var(--pink);
+        }
       }
     }
   }
-}
-@keyframes slide {
-  0% {
-    transform: translateY(0);
+  #flow:checked ~ .ladies_blocs__list .fille,
+  #men:checked ~ .ladies_blocs__list .fille,
+  #temoin:checked ~ .ladies_blocs__list .fille {
+    display: none;
   }
-  50% {
-    transform: translateY(0);
-  }
-  55% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(-50%);
+  #flow:checked ~ .ladies_blocs__list .flow,
+  #temoin:checked ~ .ladies_blocs__list .temoin,
+  #men:checked ~ .ladies_blocs__list .men,
+  #fille:checked ~ .ladies_blocs__list .fille {
+    display: block;
   }
 }

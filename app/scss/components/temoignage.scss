@@ -1,0 +1,40 @@
+@use '../util' as *;
+.temoignage {
+    margin-top: 3rem;
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 0.8fr;
+        gap: 2rem;
+        margin-top: 1.5rem;
+
+        @include breakpoint-down(tablet){
+            grid-template-columns: 1fr;
+        }
+    }
+    &__text {
+        p {
+            font-weight: 400;
+            font-size: rem(15);
+            line-height: 173%;
+        }
+    }
+    &__img {
+        align-self: center; 
+        @include breakpoint-down(tablet){
+            grid-row: 1;
+        }
+        img {
+            width: 100%;
+        }
+        p {
+            font-weight: 700;
+            font-size: rem(20);
+            text-align: center;
+
+            span {
+                font-weight: 300;
+                font-size: rem(18);
+            }
+        }
+    }
+}

@@ -1,16 +1,7 @@
 @use "../util" as *;
 
 .registre {
-  padding-top: 3rem;
-  @include breakpoint-down(extrasmall) {
-    padding-top: rem(680);
-  }
-  @include breakpoint-down(small) {
-    padding-top: rem(820);
-  }
-  @include breakpoint-down(mobile) {
-    padding-top: rem(730);
-  }
+  padding-top: 2rem;
 
   &_text {
     text-align: center;
@@ -49,7 +40,7 @@
         &:hover {
           border: solid rem(0) var(--white);
           border-radius: rem(16);
-          background-color: var(--pink);
+          background-color: var(--brown);
         }
         h4 {
           color: var(--black);
@@ -80,7 +71,6 @@
             transition: all 0.5s ease-in-out;
             opacity: 1;
           }
-
           img {
             width: 100%;
           }
@@ -90,7 +80,7 @@
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
-          color: var(--pink);
+          color: var(--brown);
           background-color: var(--white);
           border-radius: rem(4);
           opacity: 0;
@@ -107,7 +97,7 @@
   }
 
   #other:checked ~ .registre_blocs__list .cuisine,
-  #clothes:checked ~ .pregistre_blocs__list .cuisine {
+  #clothes:checked ~ .registre_blocs__list .cuisine {
     display: none;
   }
 }
