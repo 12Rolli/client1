@@ -18,13 +18,20 @@
     }
     &__elts {
       display: flex;
-      justify-content: space-evenly;
+      justify-content: center;
+      gap: rem(75);
+      @include breakpoint-down(small) {
+        gap: 0;
+      }
       label {
-        &:hover {
-          border: solid rem(0) var(--white);
-          border-radius: rem(16);
-          background-color: var(--brown);
-        }
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        // &:hover {
+        //   border: solid rem(0) var(--white);
+        //   border-radius: rem(16);
+        //   background-color: var(--brown);
+        // }
         h4 {
           color: var(--black);
           text-align: center;
@@ -41,6 +48,11 @@
       .elts {
         display: none;
         margin-top: rem(15);
+        .blocs-3 {
+          @include breakpoint-down(tablet) {
+            grid-template-columns: repeat(1, 1fr);
+          }
+        }
         .blocs-2 {
           @include breakpoint-down(tablet) {
             grid-template-columns: repeat(2, 1fr);
@@ -53,6 +65,11 @@
           gap: rem(10);
           @include breakpoint-down(tablet) {
             grid-template-columns: repeat(3, 1fr);
+          }
+        }
+        &-vide {
+          @include breakpoint-down(tablet) {
+            display: none;
           }
         }
         &-img {
@@ -81,5 +98,15 @@
   #men:checked ~ .ladies_blocs__list .men,
   #fille:checked ~ .ladies_blocs__list .fille {
     display: block;
+  }
+  #flow:checked ~ .ladies_blocs__elts .flow,
+  #temoin:checked ~ .ladies_blocs__elts .temoin,
+  #men:checked ~ .ladies_blocs__elts .men,
+  #fille:checked ~ .ladies_blocs__elts .fille {
+    border-radius: rem(16);
+    background-color: var(--brown);
+    h4 {
+      color: var(--white);
+    }
   }
 }

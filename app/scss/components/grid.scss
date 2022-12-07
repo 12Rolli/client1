@@ -15,3 +15,11 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
 }
+.grid_3__cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid_4__cols {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}

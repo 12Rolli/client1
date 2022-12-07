@@ -7,11 +7,14 @@
         gap: 2rem;
         margin-top: 1.5rem;
 
-        @include breakpoint-down(tablet){
+        @include breakpoint-down(xmedium) {
             grid-template-columns: 1fr;
         }
     }
     &__text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.7rem;
         p {
             font-weight: 400;
             font-size: rem(15);
@@ -19,8 +22,9 @@
         }
     }
     &__img {
-        align-self: center; 
-        @include breakpoint-down(tablet){
+        align-self: center;
+
+        @include breakpoint-down(xmedium) {
             grid-row: 1;
         }
         img {

@@ -4,7 +4,7 @@
 
     &__bloc1 {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr 0.8fr;
         gap: 2rem;
         @include breakpoint-down(xsmall) {
             grid-template-columns: 1fr;
@@ -13,6 +13,11 @@
         &__slider {
             position: relative;
             align-self: center;
+            height: 80vh;
+
+            @include breakpoint-down(xmedium) {
+                height: 60vh;
+            }
 
             @include breakpoint-down(xsmall) {
                 display: none;
@@ -33,8 +38,10 @@
             .slide img {
                 z-index: 1;
                 width: 130%;
+                height: 100%;
                 @include breakpoint-down(xsmall) {
                     width: 100%;
+                    height: auto;
                 }
             }
             .fades {
@@ -98,14 +105,17 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            height: 90vh;
+            height: 80vh;
             overflow-y: scroll;
             padding: 0.5rem 1rem 0 0;
             align-self: center;
-
-            @include breakpoint-down(tablet) {
-                height: 85vh;
+            @include breakpoint-down(xmedium) {
+                height: 60vh;
             }
+
+            // @include breakpoint-down(tablet) {
+            //     height: 85vh;
+            // }
             @include breakpoint-down(xsmall) {
                 overflow-y: auto;
                 height: auto;
@@ -160,10 +170,10 @@
             }
         }
         &__event {
-          justify-self: flex-end;
-          @include breakpoint-down(mobile) {
-            justify-self:normal;
-        }
+            justify-self: flex-end;
+            @include breakpoint-down(mobile) {
+                justify-self: normal;
+            }
             p {
                 padding-bottom: 0.8rem;
             }
@@ -201,6 +211,6 @@
     text-align: center;
     color: var(--pink);
 }
-.color--pink{
-  color: var(--pink);
+.color--pink {
+    color: var(--pink);
 }
