@@ -24,7 +24,6 @@
         font-size: rem(12);
       }
     }
-    a{color: var(--black);}
   }
 
   &_blocs {
@@ -91,16 +90,27 @@
           transition: all 0.7s ease-in-out;
         }
       }
+      .money,
+      .paypal {
+        text-align: center;
+        a {
+          color: var(--pink);
+        }
+      }
     }
   }
 
   #other:checked ~ .registre_blocs__list .other,
   #clothes:checked ~ .registre_blocs__list .clothes,
+  #money:checked ~ .registre_blocs__list .money,
+  #paypal:checked ~ .registre_blocs__list .paypal,
   #cuisine:checked ~ .registre_blocs__list .cuisine {
     display: block;
   }
   #other:checked ~ .registre_blocs__elts .other,
   #clothes:checked ~ .registre_blocs__elts .clothes,
+  #money:checked ~ .registre_blocs__elts .money,
+  #paypal:checked ~ .registre_blocs__elts .paypal,
   #cuisine:checked ~ .registre_blocs__elts .cuisine {
     border-radius: rem(16);
     background-color: var(--brown);
@@ -109,6 +119,8 @@
     }
   }
   #other:checked ~ .registre_blocs__list .cuisine,
+  #money:checked ~ .registre_blocs__list .cuisine,
+  #paypal:checked ~ .registre_blocs__list .cuisine,
   #clothes:checked ~ .registre_blocs__list .cuisine {
     display: none;
   }
