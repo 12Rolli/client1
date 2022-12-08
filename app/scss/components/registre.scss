@@ -36,10 +36,11 @@
     &__elts {
       display: flex;
       justify-content: center;
-      gap: rem(57);
-      // @include breakpoint-down(small) {
-      //   gap: 0;
-      // }
+      gap: rem(35);
+      @include breakpoint-down(tablet) {
+        gap: 0;
+        flex-direction: column;
+      }
       label {
         display: flex;
         flex-direction: column;
