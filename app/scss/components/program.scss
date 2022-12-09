@@ -4,7 +4,7 @@
 
     &__bloc1 {
         display: grid;
-        grid-template-columns: 1fr 0.8fr;
+        grid-template-columns: 1fr 1fr;
         gap: 2rem;
         @include breakpoint-down(xsmall) {
             grid-template-columns: 1fr;
@@ -13,11 +13,12 @@
         &__slider {
             position: relative;
             align-self: center;
-            height: 80vh;
+            height: 60vh;
+            align-self: center;
 
-            @include breakpoint-down(xmedium) {
-                height: 60vh;
-            }
+            // @include breakpoint-down(xmedium) {
+            //     height: 60vh;
+            // }
 
             @include breakpoint-down(xsmall) {
                 display: none;
@@ -26,6 +27,7 @@
             .slide {
                 display: none;
                 z-index: 1;
+                height: 60vh;
                 // position: absolute;
                 //transform: translateX(-2000px);
                 overflow: hidden;
@@ -38,7 +40,7 @@
             .slide img {
                 z-index: 1;
                 width: 100%;
-                height: 100%;
+           
                 @include breakpoint-down(xsmall) {
                     width: 100%;
                     height: auto;
@@ -105,13 +107,13 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            height: 80vh;
+            height: 60vh;
             overflow-y: scroll;
             padding: 0.5rem 1rem 0 0;
             align-self: center;
-            @include breakpoint-down(xmedium) {
-                height: 60vh;
-            }
+            // @include breakpoint-down(xmedium) {
+            //     height: 60vh;
+            // }
 
             // @include breakpoint-down(tablet) {
             //     height: 85vh;
