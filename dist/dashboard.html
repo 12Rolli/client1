@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link
+            href="https://fonts.googleapis.com/css2?family=Stalemate&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;0,900;1,400;1,700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <title>Dashboard</title>
+    </head>
+    <body class="body">
+        <div class="sidebar">
+            <img
+                src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1669720671/mariage%20client%201/logo/LOGO.png"
+                alt="photo de Manuela et Jimmy"
+                class="sidebar__image"
+            />
+            <p class="sidebar__name">Manuela & Jimmy</p>
+            <div class="sidebar__notification">
+                <i class="bx bxs-envelope">
+                    <span class="sidebar__notification__counter">14</span>
+                </i>
+            </div>
+            <ul class="sidebar__navigation">
+                <li class="sidebar__item">
+                    <a href="#" class="sidebar__link active">
+                        <i class="bx bxs-dashboard"></i>
+                        <span class="sidebar__link--name">Dashboard</span>
+                    </a>
+                </li>
+                <li class="sidebar__item">
+                    <a href="#" class="sidebar__link">
+                        <i class="bx bxs-gift"></i>
+                        <span class="sidebar__link--name">Cadeaux</span>
+                    </a>
+                </li>
+                <li class="sidebar__item">
+                    <a href="#" class="sidebar__link">
+                        <i class="bx bx-cart-download"></i>
+                        <span class="sidebar__link--name">Cadeaux achetés</span>
+                    </a>
+                </li>
+                <li class="sidebar__item sidebar__item--logout">
+                    <a href="#" class="sidebar__link">
+                        <i class="bx bx-log-out"></i>
+                        <span class="sidebar__link--name">Se déconnecter</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <section class="home">
+            <div class="home__top">
+                <i class="bx bx-menu burger__btn"></i>
+            </div>
+
+            <div class="home__cardprogress">
+                <div class="home__cardprogress__item">
+                    <div class="home__cardprogress__top">
+                        <p class="home__cardprogress__top--heading">
+                            Total Cadeaux
+                        </p>
+                        <p class="home__cardprogress__top--number">176</p>
+                        <p class="home__cardprogress__top--footer">Products</p>
+                    </div>
+                    <div class="home__cardprogress__bottom">
+                        <div class="home__cardprogress__bottom--right">
+                            <i class="bx bxs-up-arrow"></i>
+                            <p class="home__cardprogress__bottom--text">
+                                + <span>10</span> Ajoutés
+                            </p>
+                        </div>
+                        <img
+                            src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1671027683/mariage%20client%201/cadeau/graphicon.svg"
+                            alt="graphe de progression"
+                        />
+                    </div>
+                </div>
+                <div class="home__cardprogress__item">
+                    <div class="home__cardprogress__top">
+                        <p class="home__cardprogress__top--heading">
+                            Cadeaux Achetés
+                        </p>
+                        <p class="home__cardprogress__top--number">20</p>
+                        <p class="home__cardprogress__top--footer">Products</p>
+                    </div>
+                    <div class="home__cardprogress__bottom">
+                        <div class="home__cardprogress__bottom--right">
+                            <i class="bx bxs-down-arrow"></i>
+                            <p class="home__cardprogress__bottom--text">
+                                + <span>3</span> Achetés
+                            </p>
+                        </div>
+
+                        <img
+                            src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1671027683/mariage%20client%201/cadeau/graphicon.svg"
+                            alt="graphe de progression"
+                        />
+                    </div>
+                </div>
+                <div class="home__cardprogress__item">
+                    <div class="home__cardprogress__top">
+                        <p class="home__cardprogress__top--heading">
+                            Cadeaux Restants
+                        </p>
+                        <p class="home__cardprogress__top--number">03</p>
+                        <p class="home__cardprogress__top--footer">Products</p>
+                    </div>
+                    <div class="home__cardprogress__bottom">
+                        <div class="home__cardprogress__bottom--right">
+                            <i class="bx bxs-up-arrow"></i>
+                            <p class="home__cardprogress__bottom--text">
+                                + <span>2</span> Manquants
+                            </p>
+                        </div>
+
+                        <img
+                            src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1671027683/mariage%20client%201/cadeau/graphicon.svg"
+                            alt="graphe de progression"
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <div class="home__addbtn">
+                <button class="home__addbtn__btn">
+                    <span>Ajouter un cadeau</span>
+                    <i class="bx bx-plus-medical"></i>
+                </button>
+            </div>
+
+            <div class="home__table">
+                <h2 class="home__table__title">TOUS LES CADEAUX</h2>
+                <div class="home__table__container">
+                    <div class="home__table__item">
+                        <div class="home__table__item__header">
+                            <img
+                                src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1671037331/mariage%20client%201/cadeau/bloc1/gift.png"
+                                alt="photo cadaeau"
+                            />
+                            <div class="home__table__item__overlay">
+                                <button class="home__table__button--modify">
+                                    <span>Modifier</span>
+                                    <i class="bx bx-edit"></i>
+                                </button>
+                                <button class="home__table__button--delete">
+                                    <span>Supprimer</span>
+                                    <i class="bx bxs-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="home__table__item--name">Nom Cadeau</p>
+                        <p class="home__table__item--price">Prix</p>
+                    </div>
+                    <div class="home__table__item">
+                        <div class="home__table__item__header">
+                            <img
+                                src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1671037331/mariage%20client%201/cadeau/bloc1/gift.png"
+                                alt="photo cadaeau"
+                            />
+                            <div class="home__table__item__overlay">
+                                <button class="home__table__button--modify">
+                                    <span>Modifier</span>
+                                    <i class="bx bx-edit"></i>
+                                </button>
+                                <button class="home__table__button--delete">
+                                    <span>Supprimer</span>
+                                    <i class="bx bxs-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="home__table__item--name">Nom Cadeau</p>
+                        <p class="home__table__item--price">Prix</p>
+                    </div>
+                    <div class="home__table__item">
+                        <div class="home__table__item__header">
+                            <img
+                                src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1671037331/mariage%20client%201/cadeau/bloc1/gift.png"
+                                alt="photo cadaeau"
+                            />
+                            <div class="home__table__item__overlay">
+                                <button class="home__table__button--modify">
+                                    <span>Modifier</span>
+                                    <i class="bx bx-edit"></i>
+                                </button>
+                                <button class="home__table__button--delete">
+                                    <span>Supprimer</span>
+                                    <i class="bx bxs-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="home__table__item--name">Nom Cadeau</p>
+                        <p class="home__table__item--price">Prix</p>
+                    </div>
+                    <div class="home__table__item">
+                        <div class="home__table__item__header">
+                            <img
+                                src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1671037331/mariage%20client%201/cadeau/bloc1/gift.png"
+                                alt="photo cadaeau"
+                            />
+                            <div class="home__table__item__overlay">
+                                <button class="home__table__button--modify">
+                                    <span>Modifier</span>
+                                    <i class="bx bx-edit"></i>
+                                </button>
+                                <button class="home__table__button--delete">
+                                    <span>Supprimer</span>
+                                    <i class="bx bxs-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="home__table__item--name">Nom Cadeau</p>
+                        <p class="home__table__item--price">Prix</p>
+                    </div>
+                    <div class="home__table__item">
+                        <div class="home__table__item__header">
+                            <img
+                                src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1671037331/mariage%20client%201/cadeau/bloc1/gift.png"
+                                alt="photo cadaeau"
+                            />
+                            <div class="home__table__item__overlay">
+                                <button class="home__table__button--modify">
+                                    <span>Modifier</span>
+                                    <i class="bx bx-edit"></i>
+                                </button>
+                                <button class="home__table__button--delete">
+                                    <span>Supprimer</span>
+                                    <i class="bx bxs-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="home__table__item--name">Nom Cadeau</p>
+                        <p class="home__table__item--price">Prix</p>
+                    </div>
+                    <div class="home__table__item">
+                        <div class="home__table__item__header">
+                            <img
+                                src="https://res.cloudinary.com/digital-x-sarl/image/upload/v1671037331/mariage%20client%201/cadeau/bloc1/gift.png"
+                                alt="photo cadaeau"
+                            />
+                            <div class="home__table__item__overlay">
+                                <button class="home__table__button--modify">
+                                    <span>Modifier</span>
+                                    <i class="bx bx-edit"></i>
+                                </button>
+                                <button class="home__table__button--delete">
+                                    <span>Supprimer</span>
+                                    <i class="bx bxs-trash-alt"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <p class="home__table__item--name">Nom Cadeau</p>
+                        <p class="home__table__item--price">Prix</p>
+                    </div>
+                </div>
+                <div class="home__table__footer">
+                    <p class="home__footer__text">Digital X Sarl 2022</p>
+                </div>
+            </div>
+        </section>
+        <div class="form__overlay hidden"></div>
+        <section class="form hidden modal__add">
+            <div class="form__container" >
+                <span class="form__container__closemodal">&times;</span>
+
+                <h2>AJOUTER UN NOUVEAU CADEAU</h2>
+                <label for="nameproduct" class="form__container__label"
+                    >Nom du cadeau</label
+                >
+                <input
+                    type="text"
+                    placeholder="Inserez le Nom du produit"
+                    name="nameproduct"
+                    class="form__container__input"
+                    id="namegift"
+                    required
+                />
+                <label for="linkproduct" class="form__container__label"
+                    >Lien du cadeau</label
+                >
+                <input
+                    type="text"
+                    name="linkproduct"
+                    placeholder="Colez le lien du produit"
+                    class="form__container__input"
+                    id="linkgift"
+                />
+
+                <label for="priceproduct" class="form__container__label"
+                    >Prix du caddeau</label
+                >
+                <input
+                    type="number"
+                    name="priceproduct"
+                    class="form__container__input"
+                    min="1"
+                    required
+                    id="pricegift"
+                />
+
+                <label for="descriptionproduct" class="form__container__label"
+                    >Description du cadeau</label
+                >
+                <textarea
+                    name="descriptionproduct"
+                    cols="20"
+                    rows="5"
+                    class="form__container__input"
+                    id="descriptiongift"
+                ></textarea>
+
+                <!-- <div class="form__container--line"></div> -->
+
+                <input
+                    type="submit"
+                    class="form__container__submitbtn"
+                    value="Ajouter"
+                    id="addgift"
+                />
+            </div>
+        </section>
+
+        <section class="form hidden modal__modify">
+            <form class="form__container" id="form">
+                <span class="form__container__closemodal">&times;</span>
+
+                <h2>Modifier le cadeau</h2>
+                <label for="nameproduct" class="form__container__label"
+                    >Nom du cadeau</label
+                >
+                <input
+                    type="text"
+                    placeholder="Inserez le Nom du produit"
+                    name="nameproduct"
+                    class="form__container__input"
+                    required
+                />
+                <label for="linkproduct" class="form__container__label"
+                    >Lien du cadeau</label
+                >
+                <input
+                    type="text"
+                    name="linkproduct"
+                    placeholder="Colez le lien du produit"
+                    class="form__container__input"
+                />
+
+                <label for="priceproduct" class="form__container__label"
+                    >Prix du caddeau</label
+                >
+                <input
+                    type="number"
+                    name="priceproduct"
+                    class="form__container__input"
+                    min="1"
+                    required
+                />
+
+                <label for="descriptionproduct" class="form__container__label"
+                    >Description du cadeau</label
+                >
+                <textarea
+                    name="descriptionproduct"
+                    cols="20"
+                    rows="5"
+                    class="form__container__input"
+                ></textarea>
+
+                <!-- <div class="form__container--line"></div> -->
+
+                <input
+                    type="submit"
+                    class="form__container__submitbtn"
+                    value="Modifier"
+                />
+            </form>
+        </section>
+        <script src="https://code.jquery.com/jquery-3.6.2.min.js" integrity="sha256-2krYZKh//PcchRtd+H+VyyQoZ/e3EcrkxhM8ycwASPA=" crossorigin="anonymous"></script>
+        <script
+            type="module"
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+        ></script>
+        <script
+            nomodule
+            src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+        ></script>
+        <script>
+            let sidebar = document.querySelector('.sidebar');
+            let burgerBtn = document.querySelector('.burger__btn');
+            let buttonAdd = document.querySelector('.home__addbtn__btn');
+            let modalAdd = document.querySelector('.modal__add');
+            let modalModify = document.querySelector('.modal__modify');
+            let buttonModify = document.querySelectorAll(
+                '.home__table__button--modify'
+            );
+            let closeModal = document.querySelectorAll(
+                '.form__container__closemodal'
+            );
+            let overlay = document.querySelector('.form__overlay');
+            let body = document.querySelector('.body');
+            let homeSection = document.querySelector('.home');
+
+            burgerBtn.addEventListener('click', function () {
+                sidebar.classList.toggle('active');
+                homeSection.classList.toggle('active');
+
+                if (sidebar.classList.contains('active')) {
+                    burgerBtn.classList.replace('bx-menu', 'bx-menu-alt-right');
+                } else {
+                    burgerBtn.classList.replace('bx-menu-alt-right', 'bx-menu');
+                }
+            });
+
+            for (let i = 0; i < buttonModify.length; i++)
+                buttonModify[i].addEventListener('click', function () {
+                    modalModify.classList.remove('hidden');
+                    overlay.classList.remove('hidden');
+                });
+
+            buttonAdd.addEventListener('click', function () {
+                modalAdd.classList.remove('hidden');
+                overlay.classList.remove('hidden');
+                body.style.overflow = 'hidden';
+            });
+            const closeModals = function () {
+                modalAdd.classList.add('hidden');
+                modalModify.classList.add('hidden');
+                overlay.classList.add('hidden');
+                body.style.overflow = 'auto';
+            };
+            for(let i=0; i<closeModal.length;i++){
+                closeModal[i].addEventListener('click', closeModals)
+            }
+           
+            overlay.addEventListener('click', closeModals);
+        </script>
+         <script defer src="./js/backend.js"></script>
+    </body>
+</html>

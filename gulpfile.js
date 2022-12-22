@@ -47,10 +47,10 @@ task('scssTask', function () {
 
 // JavaScript Task
 task('jsTask', function () {
-    return src('app/js/script.js', { sourcemaps: true })
+    return src('app/js/**/*.js', { sourcemaps: true })
         .pipe(babel({ presets: ['@babel/preset-env'] }))
         .pipe(terser())
-        .pipe(dest('dist', { sourcemaps: '.' }));
+        .pipe(dest('dist/js', { sourcemaps: '.' }));
 });
 
 // Copy other

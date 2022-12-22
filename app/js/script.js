@@ -1,3 +1,69 @@
+
+function submits(){
+  let name = document.getElementById("nompers").value;
+  let email = document.getElementById("emailpers").value;
+  let phone = document.getElementById("numpers").value;
+  let note = document.getElementById("notepers").value;
+
+  $.ajax("https://api.maji-zepa-love.com/api/gift/da270c47-633e-4efe-b035-74b1e1c6dd18/reserve", {
+    type: 'POST',
+      headers: {
+        Authorization: 
+        "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InpWdm9jejNBMXl3NmtOVkRfbElrayJ9.eyJyb2xlIjpbImFkbWluIiwiY29tbWVyY2lhbCJdLCJpc3MiOiJodHRwczovL2Rldi1wYzRkdDZtb2k4NXlsdnUxLmF1LmF1dGgwLmNvbS8iLCJzdWIiOiJhdXRoMHw2MzdhYTdlZDIyNmE2M2U3NWQ0NDI1YmQiLCJhdWQiOiJodHRwczovL2Utd2VkZGluZy9hcGkiLCJpYXQiOjE2NzE2Mzc4NTEsImV4cCI6MTY3MTcyNDI1MSwiYXpwIjoiQVA5UDd0cEZzVmNVRllBMThZdWxiQ1VNb1ZhTlpyelMiLCJndHkiOiJwYXNzd29yZCIsInBlcm1pc3Npb25zIjpbIndyaXRlOmdpZnQiLCJ3cml0ZTppbWFnZSJdfQ.dzrZmEYHLSSnEmz0NBGHIvE5Ca3o3aBqJDpMNyUpsLHURcuIUSNKy9PnxQ3bBHoeF74Atqs1YG3LU4OiJjak0K3j142bM14FoZsUKUFhmY-trkuRZ3dQgvOysMC4x8hLGnnAcuocZhbFIGZCRUz7dKkfariVqdbQodrxTWhMnS9xVPruv01j3uRvBQdWtjkhhgG6aCiVGyrI5n57O9z3HVb5J27qEvaxdVvI2ZMW1DFAJlpO3R80kUAVag8tnjBRSQ7c3LjS0XuqJ-DliClbr0vU19mg4VVeDsTHYkKPibiD75cQlUsKFhlQAYfVkG8rVhJcPGZ7-R1njV7iPe9Hdg",
+      },
+      contentType: 'application/json',
+      data: JSON.stringify({
+        giftId: 'da270c47-633e-4efe-b035-74b1e1c6dd18',
+        name: name,
+        email: email,
+        phone: phone,
+        note: note,      
+      }),
+      success: function(data,status,xhr){
+        console.log(data);
+        console.log(status);
+      },
+      error:function(data,status,errorMessage){
+        console.log(errorMessage);
+      },
+  });
+};
+function infoPop() {
+  document.getElementById("formulaire__popupId").style.display = "block";
+  document.getElementById("registre__popupId").style.display = "none";
+  document.getElementById("registre_blocs__lists").style.display = "block";
+  document.getElementsByTagName("body")[0].style.overflowY = "hidden";
+}
+function imagePopNo() {
+  document.getElementsByClassName("formulaire__popup")[0].style.display =
+    "none";
+  document.getElementsByClassName("registre_blocs__lists")[0].style.display =
+    "block";
+  document.getElementsByTagName("body")[0].style.overflowY = "scroll";
+}
+function imagPop() {
+  document.getElementById("registre__popupsId").style.display = "block";
+  document.getElementById("registre_blocs__lists").style.display = "block";
+  document.getElementsByTagName("body")[0].style.overflowY = "hidden";
+}
+function imagePopNon() {
+  document.getElementsByClassName("registre__popups")[0].style.display = "none";
+  document.getElementsByClassName("registre_blocs__lists")[0].style.display =
+    "block";
+  document.getElementsByTagName("body")[0].style.overflowY = "scroll";
+}
+function imagePop(id) {
+  document.getElementById("registre__popupId").style.display = "block";
+  document.getElementById("registre_blocs__lists").style.display = "block";
+  document.getElementsByTagName("body")[0].style.overflowY = "scroll";
+}
+function imagePopNone() {
+  document.getElementsByClassName("registre__popup")[0].style.display = "none";
+  document.getElementsByTagName("body")[0].style.overflowY = "scroll";
+  document.getElementsByClassName("registre_blocs__lists")[0].style.display =
+    "block";
+}
+
 // References to DOM Elements
 const prevBtn = document.querySelector("#story__prev-btn");
 const nextBtn = document.querySelector("#story__next-btn");
