@@ -81,6 +81,29 @@
           img {
             width: 100%;
           }
+          #img-1-image,#img-20-image{
+            filter: brightness(0.5);
+          }
+        }
+        &-no{
+          cursor: no-drop;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          left: 20%;
+          top: 0%;
+          transform: translate(-50%, 50%);
+          color: var(--white);
+          padding-right: rem(8);
+          border: rem(2) solid var(--brown);
+          border-radius: rem(13) rem(13) 0 rem(13);
+          ion-icon{
+            font-size: rem(18);
+          }
+          @include breakpoint-down(tablet){
+          left: 50%;
+          }
         }
         &-desc,
         &-buy {
