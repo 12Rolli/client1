@@ -81,11 +81,18 @@
           img {
             width: 100%;
           }
-          #img-1-image,#img-20-image{
+          #img-1-image,
+          #img-21-image,
+          #img-26-image,
+          #img-15-image,
+          #img-35-image,
+          #img-12-image,
+          #img-16-image,
+          #img-20-image {
             filter: brightness(0.5);
           }
         }
-        &-no{
+        &-no {
           cursor: no-drop;
           position: absolute;
           display: flex;
@@ -98,11 +105,11 @@
           padding-right: rem(8);
           border: rem(2) solid var(--brown);
           border-radius: rem(13) rem(13) 0 rem(13);
-          ion-icon{
+          ion-icon {
             font-size: rem(18);
           }
-          @include breakpoint-down(tablet){
-          left: 50%;
+          @include breakpoint-down(tablet) {
+            left: 50%;
           }
         }
         &-desc,
@@ -191,17 +198,6 @@
     right: 2%;
     cursor: pointer;
   }
-  // .imagePopUnder {
-  //   position: absolute;
-  //   background-color: var(--black);
-  //   top: 0;
-  //   left: 0;
-  //   width: 100%;
-  //   z-index: 12;
-  //   &:hover {
-  //     cursor: pointer;
-  //   }
-  // }
   .block {
     border-radius: rem(25);
     background-color: var(--white);
@@ -217,6 +213,13 @@
       gap: rem(18);
       @include breakpoint-down(xsmall) {
         padding-top: rem(16);
+      }
+      .imageContain {
+        height: auto;
+        z-index: 2;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
       }
       &__desc {
         .flex {
@@ -371,7 +374,7 @@
   transform: translate(-50%, -50%);
   z-index: 200;
   display: none;
-  @include breakpoint-down(mobile){
+  @include breakpoint-down(mobile) {
     width: 100%;
   }
   .close {
